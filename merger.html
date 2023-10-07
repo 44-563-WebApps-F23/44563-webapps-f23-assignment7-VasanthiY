@@ -3,6 +3,12 @@
 
 <head>
 	<title>Merger Assignment-7</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<style>
 		.flex-container {
 			display: flex;
@@ -43,7 +49,9 @@
 
 	<p> Press the button to create an new element of type div and then add it to the container.
 	</p>
-	<button onclick="makeNewDiv()">Add end</button>
+	<button type="button" class="btn btn-success" onclick="makeNewDiv()">Add end</button>
+	<button type="button" class="btn btn-primary" onclick="addFront()">Add front</button>
+	<button type="button" class="btn btn-danger" onclick="remove()">Remove</button>
 
 
 </body>
@@ -60,6 +68,28 @@
 		let container = document.getElementById('target')
 		container.appendChild(element)
 
+	}
+
+	function remove(){
+		let mergerItems = document.getElementsByClassName("merger")
+		let length = mergerItems.length
+		if(length > 0) {
+			let index = Math.floor(length/2)
+			mergerItems[index].remove()
+		}
+	}
+
+	function addFront(){
+		let value = document.getElementById("input").value
+
+		/* make the div and its text */
+		let element = document.createElement("div")
+		element.innerHTML = value 
+		element.className = "merger"
+
+		/* add it to the container */
+		let container = document.getElementById('target')
+		container.insertBefore(element, container.firstChild)
 	}
 </script>
 
