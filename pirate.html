@@ -132,7 +132,8 @@
                     <img src="Treasure Hunt Location.jpg" id="24" alt="Treasure Location" style="height: 100%; width: 120%;padding-bottom: 5%;" onclick="check(24)">
                 </div>
             </div>
-           
+           <br>
+           <button type="button" class="btn btn-primary" onclick="reset()">Reset</button>
         </div>
         <script>
             let ids = ["0", "1", "2", "3", "4", "5", "6", "7", "8",
@@ -141,9 +142,11 @@
             let checkCount = 0
             let penalty = 0
             let lastCheck = 0
-            let treasureLocation = 5
-            let trapLocation = 18
+            let treasureLocation = Math.floor( Math.random()*24)
+            let trapLocation = Math.floor( Math.random()*24)
             let gameOver = false
+            console.log(treasureLocation)
+            console.log(trapLocation)
             function check(position) {
                 if(!gameOver) {
                     let id = ids[position]
@@ -193,6 +196,13 @@
                     document.getElementById("help").innerHTML = "Step Faster";
                     return "Step Faster"
                 }
+            }
+
+            function reset(){
+                penalty = 0
+                checkCount = 0
+                trapLocation = Math.floor( Math.random()*24)
+                treasureLocation = Math.floor( Math.random()*24)
             }
         </script>
     </body>

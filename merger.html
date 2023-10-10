@@ -52,7 +52,7 @@
 	<button type="button" class="btn btn-success" onclick="makeNewDiv()">Add end</button>
 	<button type="button" class="btn btn-primary" onclick="addFront()">Add front</button>
 	<button type="button" class="btn btn-danger" onclick="remove()">Remove</button>
-
+	<button type="button" class="btn btn-info" onclick="swap()">Swap</button>
 
 </body>
 <script>
@@ -91,6 +91,15 @@
 		let container = document.getElementById('target')
 		container.insertBefore(element, container.firstChild)
 	}
+
+	function swap(){
+        let queueItems = document.getElementsByClassName("merger");
+        let length = queueItems.length;
+        let queueItem = document.getElementsByClassName("merger")[Math.floor(Math.random() * length)];
+        let container = document.getElementById("target");
+        container.insertBefore(queueItem, container.firstChild);
+    }
+
 </script>
 
 </html>
