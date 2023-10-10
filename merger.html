@@ -93,11 +93,11 @@
 	}
 
 	function swap(){
-        let queueItems = document.getElementsByClassName("merger");
-        let length = queueItems.length;
-        let queueItem = document.getElementsByClassName("merger")[Math.floor(Math.random() * length)];
+        let mergerItems = document.getElementsByClassName("merger");
+        let length = mergerItems.length;
+        let mergerItem = document.getElementsByClassName("merger")[Math.floor(Math.random() * length)];
         let container = document.getElementById("target");
-        container.insertBefore(queueItem, container.firstChild);
+        container.insertBefore(mergerItem, container.firstChild);
     }
 
 </script>
